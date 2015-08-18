@@ -12,10 +12,10 @@ env:
 
 install:
   - mkdir -p $LOGS_DIR
-  - ./scripts/sauce_connect_setup.sh
-  - npm install -g npm
   - npm install
-  - ./scripts/wait_for_browser_provider.sh
 
 script:
   - ./scripts/test_on_sauce.sh
+
+addons:
+  sauce_connect: true
